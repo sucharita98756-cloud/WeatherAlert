@@ -1,0 +1,41 @@
+{
+  "currentLocation": {
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "country": "India",
+    "latitude": 22.5726,
+    "longitude": 88.3639
+  },
+
+  "savedLocations": [
+    {
+      "id": 1,
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "country": "India",
+      "latitude": 22.5726,
+      "longitude": 88.3639,
+      "isDefault": true
+    },
+
+    {
+      "id": 2,
+      "city": "Howrah",
+      "state": "West Bengal",
+      "country": "India",
+      "latitude": 22.5958,
+      "longitude": 88.2636,
+      "isDefault": false
+    },
+
+    {
+      "id": 3,
+      "city": "New Delhi",
+      "state": "Delhi",
+      "country": "India",
+      "latitude": 28.6139,
+      "longitude": 77.2090,
+      "isDefault": false
+    }
+  ]
+}

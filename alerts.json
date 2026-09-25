@@ -1,0 +1,49 @@
+{
+  "location": "Kolkata",
+  "alerts": [
+    {
+      "id": 1,
+      "type": "Heavy Rain",
+      "severity": "HIGH",
+      "title": "Heavy Rain Warning",
+      "message": "Heavy rainfall is expected in the area.",
+      "startTime": "2026-09-24T14:00:00",
+      "endTime": "2026-09-24T20:00:00",
+      "recommendation": [
+        "Avoid unnecessary travel",
+        "Carry an umbrella",
+        "Stay away from waterlogged roads"
+      ]
+    },
+
+    {
+      "id": 2,
+      "type": "Thunderstorm",
+      "severity": "MEDIUM",
+      "title": "Thunderstorm Alert",
+      "message": "Thunderstorms may occur during the evening.",
+      "startTime": "2026-09-24T16:00:00",
+      "endTime": "2026-09-24T19:00:00",
+      "recommendation": [
+        "Stay indoors",
+        "Avoid open areas",
+        "Unplug sensitive electrical devices"
+      ]
+    },
+
+    {
+      "id": 3,
+      "type": "UV",
+      "severity": "LOW",
+      "title": "High UV Index",
+      "message": "UV levels may be high during afternoon hours.",
+      "startTime": "2026-09-24T11:00:00",
+      "endTime": "2026-09-24T15:00:00",
+      "recommendation": [
+        "Use sunscreen",
+        "Avoid direct sunlight",
+        "Stay hydrated"
+      ]
+    }
+  ]
+}

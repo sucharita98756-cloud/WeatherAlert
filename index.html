@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherAlert - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dashboard.js"></script>
+</head>
+
+<body>
+   
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🌦️ <span>WeatherAlert</span>
+        </div>
+
+     <nav>
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="alert.html">🚨 Alerts</a>
+    <a href="location.html">📍 Location</a>
+    <a href="forecast.html">🌤️ Forecast</a>
+    <a href="Setting.html">⚙️ Settings</a>
+</nav>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your weather update.</p>
+            </div>
+
+            <div class="header-right">
+                <button class="notification">🔔</button>
+                <div class="profile">S</div>
+            </div>
+
+        </header>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search city..."
+            >
+
+            <button onclick="searchWeather()">
+                🔍 Search
+            </button>
+
+        </section>
+
+
+        <!-- Current Weather -->
+        <section class="weather-main">
+
+            <div class="current-weather">
+
+                <div class="location">
+                    📍 <span id="cityName">Kolkata, India</span>
+                </div>
+
+                <div class="weather-info">
+
+                    <div class="weather-icon" id="weatherIcon">
+                        ☁️
+                    </div>
+
+                    <div>
+                        <h2 id="temperature">29°C</h2>
+                        <p id="condition">Cloudy</p>
+                        <p>Feels like <span id="feelsLike">32°C</span></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Weather Details -->
+            <div class="weather-details">
+
+                <div class="detail-card">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <h3 id="humidity">78%</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <h3 id="wind">12 km/h</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>🌧️</span>
+                    <p>Rain Chance</p>
+                    <h3 id="rain">60%</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>☀️</span>
+                    <p>UV Index</p>
+                    <h3 id="uv">5</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Alert -->
+        <section class="alert-card">
+
+            <div class="alert-icon">
+                ⚠️
+            </div>
+
+            <div class="alert-content">
+
+                <h2>Weather Alert</h2>
+
+                <p>
+                    Heavy rainfall is possible in your area.
+                    Please stay alert and avoid low-lying areas.
+                </p>
+
+                <button onclick="showAlert()">
+                    View Alert
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Forecast -->
+        <section class="forecast-section">
+
+            <div class="section-title">
+                <h2>Today's Forecast</h2>
+                <a href="#">View Full Forecast →</a>
+            </div>
+
+
+            <div class="forecast-container">
+
+                <div class="forecast-card">
+                    <p>10 AM</p>
+                    <span>☁️</span>
+                    <h3>29°C</h3>
+                </div>
+
+                <div class="forecast-card">
+                    <p>12 PM</p>
+                    <span>🌤️</span>
+                    <h3>31°C</h3>
+                </div>
+
+                <div class="forecast-card">
+                    <p>2 PM</p>
+                    <span>🌧️</span>
+                    <h3>30°C</h3>
+                </div>
+
+                <div class="forecast-card">
+                    <p>4 PM</p>
+                    <span>🌧️</span>
+                    <h3>28°C</h3>
+                </div>
+
+                <div class="forecast-card">
+                    <p>6 PM</p>
+                    <span>☁️</span>
+                    <h3>27°C</h3>
+                </div>
+
+                <div class="forecast-card">
+                    <p>8 PM</p>
+                    <span>🌙</span>
+                    <h3>26°C</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+     
+
+<
+
+    
+
+</body>
+</html>
