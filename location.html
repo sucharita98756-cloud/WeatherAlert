@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherAlert - Location</title>
+
+    <link rel="stylesheet" href="location.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🌦️ WeatherAlert
+        </div>
+
+     <nav>
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="alert.html">🚨 Alerts</a>
+    <a href="location.html">📍 Location</a>
+    <a href="forecast.html">🌤️ Forecast</a>
+    <a href="setting.html">⚙️ Settings</a>
+</nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Locations</h1>
+
+                <p>
+                    Manage your weather locations.
+                </p>
+            </div>
+
+            <button class="notification">
+                🔔
+            </button>
+
+        </header>
+
+
+        <!-- SEARCH LOCATION -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="locationInput"
+                    placeholder="Search city or location..."
+                >
+
+            </div>
+
+            <button
+                class="search-btn"
+                onclick="searchLocation()">
+
+                Search
+
+            </button>
+
+        </section>
+
+
+        <!-- CURRENT LOCATION -->
+        <section class="current-location">
+
+            <div class="current-icon">
+                📍
+            </div>
+
+            <div class="current-info">
+
+                <span class="current-label">
+                    CURRENT LOCATION
+                </span>
+
+                <h2 id="currentCity">
+                    Kolkata, India
+                </h2>
+
+                <p id="coordinates">
+                    Latitude: 22.5726° N
+                    &nbsp; | &nbsp;
+                    Longitude: 88.3639° E
+                </p>
+
+            </div>
+
+            <div class="current-action">
+
+                <span class="active-status">
+                    ● Active
+                </span>
+
+                <button onclick="useCurrentLocation()">
+                    Use My Location
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAVED LOCATIONS -->
+        <section class="saved-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Saved Locations</h2>
+
+                    <p>
+                        Your frequently checked locations
+                    </p>
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="openAddLocation()">
+
+                    + Add Location
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="location-list"
+                id="locationList">
+
+
+                <!-- LOCATION 1 -->
+
+                <div class="location-card">
+
+                    <div class="location-card-icon">
+                        🏠
+                    </div>
+
+                    <div class="location-details">
+
+                        <h3>Kolkata</h3>
+
+                        <p>
+                            West Bengal, India
+                        </p>
+
+                        <span class="default-badge">
+                            DEFAULT
+                        </span>
+
+                    </div>
+
+                    <div class="location-weather">
+
+                        <span>☁️</span>
+
+                        <strong>29°C</strong>
+
+                        <small>
+                            Cloudy
+                        </small>
+
+                    </div>
+
+                    <div class="location-actions">
+
+                        <button
+                            onclick="selectLocation('Kolkata')"
+                            title="Select">
+
+                            ✓
+
+                        </button>
+
+                        <button
+                            onclick="removeLocation(this)"
+                            title="Remove">
+
+                            🗑️
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION 2 -->
+
+                <div class="location-card">
+
+                    <div class="location-card-icon">
+                        🏢
+                    </div>
+
+                    <div class="location-details">
+
+                        <h3>Howrah</h3>
+
+                        <p>
+                            West Bengal, India
+                        </p>
+
+                    </div>
+
+                    <div class="location-weather">
+
+                        <span>🌧️</span>
+
+                        <strong>28°C</strong>
+
+                        <small>
+                            Rainy
+                        </small>
+
+                    </div>
+
+                    <div class="location-actions">
+
+                        <button
+                            onclick="selectLocation('Howrah')"
+                            title="Select">
+
+                            ✓
+
+                        </button>
+
+                        <button
+                            onclick="removeLocation(this)"
+                            title="Remove">
+
+                            🗑️
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION 3 -->
+
+                <div class="location-card">
+
+                    <div class="location-card-icon">
+                        ✈️
+                    </div>
+
+                    <div class="location-details">
+
+                        <h3>Delhi</h3>
+
+                        <p>
+                            Delhi, India
+                        </p>
+
+                    </div>
+
+                    <div class="location-weather">
+
+                        <span>☀️</span>
+
+                        <strong>34°C</strong>
+
+                        <small>
+                            Sunny
+                        </small>
+
+                    </div>
+
+                    <div class="location-actions">
+
+                        <button
+                            onclick="selectLocation('Delhi')"
+                            title="Select">
+
+                            ✓
+
+                        </button>
+
+                        <button
+                            onclick="removeLocation(this)"
+                            title="Remove">
+
+                            🗑️
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- LOCATION INFORMATION -->
+
+        <section class="location-info">
+
+            <div class="info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h2>Why save locations?</h2>
+
+                <p>
+                    Save your home, college, workplace or travel
+                    destinations to quickly check their weather,
+                    forecasts and alerts.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ADD LOCATION MODAL -->
+
+    <div
+        class="modal"
+        id="locationModal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeAddLocation()">
+
+                ×
+
+            </button>
+
+            <h2>Add Location</h2>
+
+            <p>
+                Enter a city name to save it.
+            </p>
+
+            <input
+                type="text"
+                id="newLocation"
+                placeholder="Example: Mumbai"
+            >
+
+            <button
+                class="save-btn"
+                onclick="addLocation()">
+
+                Save Location
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="location.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #1e293b;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #0f172a;
+
+    color: white;
+
+    padding: 25px 15px;
+}
+
+.logo {
+    font-size: 21px;
+
+    font-weight: bold;
+
+    padding: 10px;
+
+    margin-bottom: 40px;
+}
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.sidebar nav a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+/* ================= MAIN ================= */
+
+.main-content {
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+
+    padding: 30px;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 30px;
+}
+
+.header p {
+    margin-top: 6px;
+
+    color: #64748b;
+}
+
+.notification {
+    border: none;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ================= LOCATION ================= */
+
+.location-section {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.location-section > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.location-icon {
+    font-size: 35px;
+}
+
+.location-section p {
+    color: #64748b;
+
+    margin-bottom: 5px;
+}
+
+.location-section h2 {
+    font-size: 20px;
+}
+
+.location-section button {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* ================= TODAY ================= */
+
+.today-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.today-date {
+    color: #64748b;
+
+    margin-bottom: 15px;
+}
+
+.today-weather {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.today-weather > span {
+    font-size: 70px;
+}
+
+.today-weather h2 {
+    font-size: 48px;
+
+    margin-bottom: 5px;
+}
+
+.today-weather p {
+    color: #64748b;
+}
+
+
+/* ================= TODAY DETAILS ================= */
+
+.today-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.today-details > div {
+    background: #f8fafc;
+
+    padding: 17px;
+
+    border-radius: 12px;
+}
+
+.today-details span {
+    font-size: 25px;
+}
+
+.today-details p {
+    color: #64748b;
+
+    margin: 7px 0;
+}
+
+.today-details strong {
+    font-size: 20px;
+}
+
+
+/* ================= SECTION ================= */
+
+.forecast-section {
+    margin-bottom: 30px;
+}
+
+.section-header {
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+}
+
+.section-header p {
+    color: #64748b;
+
+    margin-top: 5px;
+}
+
+
+/* ================= HOURLY ================= */
+
+.hourly-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(8, 1fr);
+
+    gap: 10px;
+}
+
+.hour-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 18px 10px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.hour-card:hover,
+.active-hour {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.active-hour {
+    border: 2px solid #2563eb;
+}
+
+.hour-card p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.hour-card span {
+    font-size: 32px;
+
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+.hour-card h3 {
+    margin-bottom: 8px;
+}
+
+.hour-card small {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* ================= WEEKLY ================= */
+
+.weekly-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.day-card {
+    background: white;
+
+    padding: 18px 22px;
+
+    border-radius: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 0.7fr 2fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.day-name {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.day-name small {
+    color: #64748b;
+}
+
+.day-icon {
+    font-size: 32px;
+}
+
+.condition {
+    color: #475569;
+}
+
+.temperature {
+    display: flex;
+
+    gap: 12px;
+}
+
+.temperature span {
+    color: #94a3b8;
+}
+
+.rain {
+    color: #2563eb;
+}
+
+
+/* ================= ADVICE ================= */
+
+.advice-card {
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+.advice-icon {
+    font-size: 30px;
+}
+
+.advice-card h2 {
+    margin-bottom: 7px;
+}
+
+.advice-card p {
+    color: #475569;
+
+    line-height: 1.5;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .hourly-container {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .today-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+
+        width: calc(100% - 190px);
+    }
+
+    .day-card {
+        grid-template-columns:
+            1fr 0.5fr 1.5fr 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .location-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .hourly-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .today-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .day-card {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .condition {
+        grid-column: span 2;
+    }
+}

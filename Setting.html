@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherAlert - Settings</title>
+
+    <link rel="stylesheet" href="setting.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🌦️ WeatherAlert
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="alert.html">
+                🚨 Alerts
+            </a>
+
+            <a href="location.html">
+                📍 Location
+            </a>
+
+            <a href="forecast.html">
+                🌤️ Forecast
+            </a>
+
+            <a href="setting.html" >
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+
+                <h1>Settings</h1>
+
+                <p>
+                    Manage your WeatherAlert preferences.
+                </p>
+
+            </div>
+
+            <button
+                class="notification"
+                onclick="showNotification()">
+
+                🔔
+
+            </button>
+
+        </header>
+
+
+        <!-- ================= NOTIFICATION SETTINGS ================= -->
+
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    🔔
+                </div>
+
+                <div>
+
+                    <h2>Notifications</h2>
+
+                    <p>
+                        Control weather alerts and notifications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weather Alerts -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Weather Alerts</h3>
+
+                    <p>
+                        Receive important weather warnings.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="weatherAlerts"
+                        checked
+                        onchange="saveSettings()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- Heavy Rain -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Heavy Rain Alerts</h3>
+
+                    <p>
+                        Get notified when heavy rainfall is expected.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="rainAlerts"
+                        checked
+                        onchange="saveSettings()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- Storm -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Storm & Cyclone Alerts</h3>
+
+                    <p>
+                        Receive alerts for severe storms and cyclones.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="stormAlerts"
+                        checked
+                        onchange="saveSettings()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- Daily Summary -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Daily Weather Summary</h3>
+
+                    <p>
+                        Receive a daily weather report.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="dailySummary"
+                        onchange="saveSettings()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WEATHER PREFERENCES ================= -->
+
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    🌤️
+                </div>
+
+                <div>
+
+                    <h2>Weather Preferences</h2>
+
+                    <p>
+                        Customize how weather information is displayed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Temperature -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Temperature Unit</h3>
+
+                    <p>
+                        Select your preferred temperature unit.
+                    </p>
+
+                </div>
+
+                <select
+                    id="temperatureUnit"
+                    onchange="saveSettings()">
+
+                    <option value="celsius">
+                        Celsius (°C)
+                    </option>
+
+                    <option value="fahrenheit">
+                        Fahrenheit (°F)
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Wind -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Wind Speed Unit</h3>
+
+                    <p>
+                        Select your preferred wind speed unit.
+                    </p>
+
+                </div>
+
+                <select
+                    id="windUnit"
+                    onchange="saveSettings()">
+
+                    <option value="kmh">
+                        km/h
+                    </option>
+
+                    <option value="ms">
+                        m/s
+                    </option>
+
+                    <option value="mph">
+                        mph
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Forecast -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Default Forecast</h3>
+
+                    <p>
+                        Choose your default forecast period.
+                    </p>
+
+                </div>
+
+                <select
+                    id="forecastDays"
+                    onchange="saveSettings()">
+
+                    <option value="7">
+                        7 Days
+                    </option>
+
+                    <option value="5">
+                        5 Days
+                    </option>
+
+                    <option value="3">
+                        3 Days
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRIVACY ================= -->
+
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <h2>Privacy & Location</h2>
+
+                    <p>
+                        Manage location and privacy preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Location Access -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Location Access</h3>
+
+                    <p>
+                        Allow WeatherAlert to use your location.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="locationAccess"
+                        checked
+                        onchange="saveSettings()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- Search History -->
+
+            <div class="setting-row">
+
+                <div>
+
+                    <h3>Save Search History</h3>
+
+                    <p>
+                        Save your recently searched locations.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="searchHistory"
+                        checked
+                        onchange="saveSettings()">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACCOUNT ================= -->
+
+        <section class="settings-card">
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <h2>Account</h2>
+
+                    <p>
+                        Manage your WeatherAlert account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="account-info">
+
+                <div class="profile-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <h3>WeatherAlert User</h3>
+
+                    <p>
+                        User account
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="account-buttons">
+
+                <button onclick="editProfile()">
+                    Edit Profile
+                </button>
+
+                <button
+                    class="logout"
+                    onclick="logout()">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SAVE BUTTON ================= -->
+
+        <div class="save-container">
+
+            <button
+                class="save-all"
+                onclick="saveAllSettings()">
+
+                💾 Save Settings
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="settings.js"></script>
+
+</body>
+
+</html>
